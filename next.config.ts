@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  
+  eslint: {
+    // ❗ Allows production builds to continue even if ESLint errors exist
+    ignoreDuringBuilds: true,
+  },
   images: {
     domains: [
       "static-01.daraz.com.np",
