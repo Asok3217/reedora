@@ -60,13 +60,13 @@ export function CarouselSize({ allPerfumes }) {
                 >
                   <Card className="border-none">
                     <CardContent className="flex flex-col items-center p-4">
-                      <div className="w-full h-64">
+                      <div className="relative w-full aspect-square">
                         <Image
                           src={perfume.image}
                           alt={perfume.name}
-                          width={256}
-                          height={256}
-                          className="object-contain w-full h-full rounded-xl"
+                          fill
+                          sizes="(max-width: 768px) 50vw, 25vw"
+                          className="object-contain rounded-xl"
                         />
                       </div>
 

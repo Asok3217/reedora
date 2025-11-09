@@ -26,21 +26,21 @@ const Collection = () => {
   ];
 
   return (
-    <div className=" mb-44 p-5">
+    <section className="container mx-auto py-24 px-4">
       {/* Title */}
-      <div className="w-full flex justify-center mb-20">
-        <h1 className="text-6xl font-bold text-gray-800 strokeme">
+      <div className="text-center mb-16">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 strokeme tracking-tight">
           Collection
         </h1>
       </div>
 
       {/* Collection Grid */}
-      <div className="flex flex-wrap justify-center gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
         {collection.map((item, index) => (
           <CollectionCard collection={item} key={index} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

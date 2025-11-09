@@ -23,13 +23,13 @@ const Card: React.FC<{ perfume: PerfumeCardProps }> = ({ perfume }) => {
       className="border rounded-lg shadow-md w-80 h-[420px] flex flex-col justify-between group cursor-pointer overflow-hidden"
     >
       {/* Image Section */}
-      <div className="overflow-hidden h-3/5">
+      <div className="relative overflow-hidden aspect-square w-full">
         <Image
           src={perfume.image}
           alt={perfume.name}
-          width={500}
-          height={500}
-          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-contain group-hover:scale-105 transition-transform duration-500"
         />
       </div>
 

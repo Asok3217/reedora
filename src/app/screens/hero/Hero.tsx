@@ -2,6 +2,7 @@ import { CarouselSize } from "@/app/components/carousel/Carousel";
 import { prisma } from "@/lib/prisma";
 import Image from "next/image";
 import HeroAnim from "./HeroAnim";
+import { Link } from "lucide-react";
 
 const Hero = async () => {
   const allPerfumes = await prisma.perfumeModel.findMany({
@@ -27,11 +28,11 @@ const Hero = async () => {
               <HeroAnim />
             </div>
             <div className="text-xl mt-5">
-              <a href="/shop">
+              <Link href="/shop">
                 <button className="p-6 bg-transparent border border-gray-400 text-gray-700 hover:bg-gray-600 hover:text-white">
                   Shop Now
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -47,32 +48,40 @@ const Hero = async () => {
         </div>
 
         {/* Image Section */}
-        <div className="hidden lg:flex lg:flex-wrap lg:flex-nowrap w-full md:w-[50%] gap-2">
-          <div className="h-auto md:h-[90%] flex flex-col gap-5 justify-end items-end p-5">
-            <Image
-              src="/sidemodel.png"
-              alt="model image"
-              height={800}
-              width={2000}
-              className="h-auto max-h-[400px] md:h-[50%] rounded-xl object-cover"
-            />
-            <Image
-              src="/model2.jpg"
-              alt="model image"
-              height={800}
-              width={2000}
-              className="h-auto max-h-[400px] md:h-[50%] rounded-xl object-cover"
-            />
+        <div className="hidden lg:flex w-full md:w-[50%] gap-4">
+          <div className="flex-1 flex flex-col gap-4">
+            <div className="relative aspect-[3/4] w-full">
+              <Image
+                src="/sidemodel.png"
+                alt="model image"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                priority
+                className="rounded-xl object-cover"
+              />
+            </div>
+            <div className="relative aspect-[3/4] w-full">
+              <Image
+                src="/model2.jpg"
+                alt="model image"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="rounded-xl object-cover"
+              />
+            </div>
           </div>
 
-          <div className="h-auto md:h-[90%] flex justify-end items-end pb-5 pt-5 pr-5 rounded-xl">
-            <Image
-              src="/menmodel.png"
-              alt="model image"
-              height={800}
-              width={2000}
-              className="h-full rounded-xl object-cover"
-            />
+          <div className="flex-1">
+            <div className="relative aspect-[9/16] w-full">
+              <Image
+                src="/menmodel.png"
+                alt="model image"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="rounded-xl object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>
