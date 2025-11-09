@@ -1,10 +1,12 @@
 // app/admin/dashboard/page.tsx
 
+import type { PageProps } from "next"; // ✅ Add this
 import Sidebar from "./components/Sidebar";
 import AddProduct from "./components/AddProduct";
 import ProductList from "./components/ProductList";
 
-interface AdminDashboardProps {
+// ✅ Extend PageProps to satisfy Next.js 15 constraints
+interface AdminDashboardProps extends PageProps {
   searchParams?: { page?: string };
 }
 
